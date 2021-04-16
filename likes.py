@@ -15,11 +15,9 @@ import json
 import pyautogui
 import time
 import io
-#import pandas as pd 
-#from openpyxl import load_workbook
 import os 
 
-#opciones ignorar exceptuando el driver_path
+#driver options and driver path
 otps= Options()
 otps.add_argument("user-agent=Mozilla/5.0 (X11; linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)")
 chrome_options = webdriver.ChromeOptions()
@@ -44,10 +42,10 @@ boton = driver.find_element(By.XPATH, '//main//div[@data-testid="LoginForm_Login
 boton.click()
 
 
-#La lista de seguidores del usuario que querramos extraer informacion
+#URL followers
 driver.get('https://twitter.com/@example1/followers')
 
-#aca esta definiendo la informacion a sacar ignorar
+#ignore, information to get 
 cards1 = WebDriverWait(driver, 15).until(
 (EC.presence_of_element_located((By.XPATH, '//div[@data-testid="UserCell"]')))
 )
@@ -58,7 +56,7 @@ time.sleep(5)
 
 almacenamiento= []
 
-#definimos como almacenar los datos donde X vale la lista en donde guardaremos la informacion
+#We define how to store the data where X is worth the list where we will save the information
 def juntar(x):
     cards = driver.find_elements(By.XPATH, '//div[@data-testid="UserCell"]')
     card = driver.find_elements(By.XPATH, '//span')
@@ -69,8 +67,8 @@ def juntar(x):
 
 almacenamiento = []
 
-#este valor es importante define cuantas veces usaremos el scroll
-#40 scroll son equivalente a 700 cuentas aproximadamente
+#THIS is important,amount of scroll that the program will do
+#40 scroll = 700 accounts approx.
 repeat = 40
 
 while repeat > 0:
