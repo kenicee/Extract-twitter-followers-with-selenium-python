@@ -1,3 +1,4 @@
-# Extraer-seguidores-de-twitter-con-selenium-python
-extrae seguidores de la persona que queramos con un hasta máximo de 1799 segun mis tests.
-En "facu.txt" almacenara los datos
+
+# Extract-twitter-followers-with-selenium-python
+extract followers of the person we want with a maximum of 1799 according to my tests.
+In "facu.txt" it will store the data
